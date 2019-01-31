@@ -24,8 +24,12 @@ namespace DatingApp.API.Helpers
                      .ForMember(dest => dest.Age, opt => {
                     opt.ResolveUsing(d => d.DateOfBirth.CalculateAge());
                 });
+
+            //A ordem interessa no mapeamento ( de , para )
             CreateMap<Photo, PhotoforDetailedDto>();
             CreateMap<UserForUpdateDto,User>();
+            CreateMap<Photo, PhotoForReturnDto>();
+            CreateMap<PhotoForCreationDto, Photo>(); 
         }
     }
 }
