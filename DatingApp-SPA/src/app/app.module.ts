@@ -2,7 +2,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import {HttpClientModule} from '@angular/common/http';
 import {FormsModule, ReactiveFormsModule} from '@angular/forms';
-import { BsDropdownModule, TabsModule, BsDatepickerModule } from 'ngx-bootstrap';
+import { BsDropdownModule, TabsModule, BsDatepickerModule, PaginationModule, ButtonsModule } from 'ngx-bootstrap';
 import { JwtModule } from '@auth0/angular-jwt';
 import { NgxGalleryModule } from 'ngx-gallery';
 import {TimeAgoPipe} from 'time-ago-pipe';
@@ -57,11 +57,13 @@ export function tokenGetter() {
       HttpClientModule,
       FormsModule,
       ReactiveFormsModule,
+      ButtonsModule.forRoot(),
       BsDropdownModule.forRoot(),
       TabsModule.forRoot(),
       RouterModule.forRoot(appRoutes),
-      NgxGalleryModule,
+      PaginationModule.forRoot(),
       BsDatepickerModule.forRoot(),
+      NgxGalleryModule,
       FileUploadModule,
       JwtModule.forRoot({
          config: {
@@ -79,6 +81,7 @@ export function tokenGetter() {
       UserService,
       MemberDetailResolver,
       MemberListResolver,
+      MemberEditComponent,
       MemberEditResolver,
       PreventUnsavedChanges
    ],
