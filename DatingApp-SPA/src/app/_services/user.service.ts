@@ -137,7 +137,7 @@ export class UserService {
 
   }
 
-  markAsRead(userId: number, messageId: number){
+  markAsRead(userId: number, messageId: number) {
     this.http.post(this.baseUrl + 'users/' + userId + '/messages/' + messageId + '/read', {})
     .subscribe();
   }
